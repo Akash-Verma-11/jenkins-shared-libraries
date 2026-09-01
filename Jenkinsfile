@@ -35,7 +35,7 @@ pipeline {
             steps {
                 script {
                     echo "this is deploying stage"
-                    sh "docker run -d -p 8080:8080 --name notes-app notes-app:latest
+                    sh "docker run -d -p 8080:8080 --name notes-app notes-app:latest"
                 }
             }
         }
