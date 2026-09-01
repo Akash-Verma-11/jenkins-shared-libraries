@@ -1,4 +1,4 @@
-def call(String Project, String ImageName, String dockerHubUser) {
+def call(String imageName, String imageTag, String dockerHubUser) {
   withCredentials([usernamePassword(
     credentialsId: "dockerHubCred",
     usernameVariable: "dockerHubUser",
@@ -8,3 +8,4 @@ def call(String Project, String ImageName, String dockerHubUser) {
     sh "docker image tag notes-app:latest ${env.dockerHubUser}/notes-app:latest"
     sh "docker push ${env.dockerHubUser}/notes-app:latest"
   }
+}
